@@ -1,3 +1,14 @@
+<style>
+    @font-face {
+  font-family: 'Eight Track';
+  src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
+}
+
+body{
+    font-family: 'Eight Track';
+  src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
+}
+</style>
 <?php
 //Configuration for our PHP server
 set_time_limit(0);
