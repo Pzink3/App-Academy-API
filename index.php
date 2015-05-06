@@ -27,7 +27,7 @@ function getUserID($userName){
     $url = "http://api.instagram.com/vl/users/search?q=".$userName."&client_id=".clientID;
     $instagramInfo = connectToInstagram($url);
     $results = json_decode($instagramInfo, true);
-    echo $results['data']['0']['id'];
+    return $results['data']['0']['id'];
 }
 //function to print out images onto screen
 
