@@ -40,6 +40,16 @@ function printImages($userID){
     $image_url = $items['images']['low_resolution']['url'];
         
     echo "<img src=".$image_url."/><br/>";
+    //function to save image to server
+    
+    function savePictures($image_url){
+        echo $image_url."<br>";
+        $filename = basename($image_url);
+        echo $filename . "<br>";
+        
+        $destination = ImageDirectory . $filename;
+        file_put_contents($destination, file_get_contents($image));
+    }
     }
     
 }
