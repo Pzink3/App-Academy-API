@@ -8,6 +8,12 @@ body{
     font-family: 'Eight Track';
   src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
 }
+a { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+a { color:blue }
 </style>
 <?php
 //Configuration for our PHP server
