@@ -99,7 +99,7 @@ else {
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Untitled</title>
+<title>App Academy API</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="author" href="humans.txt">
 </head>
