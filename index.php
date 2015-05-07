@@ -17,8 +17,8 @@ session_start();
 //Make Constants using define.
 define('clientID', 'c73d173254d844b89d8117954f97d9ee');
 define('clientSecret', '971766cd8c4f4af7b7a6ff36f32b68b0');
-define('websiteURL', 'http://localhost:8888/appacademyapi/index.php');
-define('redirectURI', 'http://localhost:8888/appacademyapi/index.php');
+// define('websiteURL', 'http://localhost:8888/appacademyapi/index.php');
+define('redirectURI', 'http://localhost/appacademyapi/index.php');
 define('ImageDirectory', 'pics/');
 
 function connectToInstagram($url){
