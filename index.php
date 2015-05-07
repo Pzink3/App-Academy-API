@@ -15,8 +15,9 @@ set_time_limit(0);
 ini_set('default_socket_timeout', 300);
 session_start();
 //Make Constants using define.
-define('clientID', '477393f935964621b84185fb1c272017');
-define('clientSecret', 'b3b9843feb9d412aab05bc61367737ef');
+define('clientID', 'c73d173254d844b89d8117954f97d9ee');
+define('clientSecret', '971766cd8c4f4af7b7a6ff36f32b68b0');
+define('websiteURL', 'http://localhost:8888/appacademyapi/index.php');
 define('redirectURI', 'http://localhost:8888/appacademyapi/index.php');
 define('ImageDirectory', 'pics/');
 
@@ -104,7 +105,7 @@ else {
 </head>
 <body>
 <!-- Creating a login for people to go and give approval for our web app to access their Instagram Account after getting approval we are now -->
-<a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">LOGIN</a>
+<a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">Login</a>
 <script src="js/main.js"></script>
 </body>
 </html>
