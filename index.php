@@ -115,7 +115,12 @@ else {
 <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">Login</a></font>
 <br>
 <font size="92"><a href="JavaScript:window.close()">Quit</a></font></center>
-<marquee behavior="scroll" direction="left">This API is brought to you by our friends at Instagram. Instagram is your only place to find all of your app-registered needs! Visit www.instagram.com today before it's too late!</marquee>
+<marquee behavior="scroll" direction="left">This API is brought to you by our good friends at Instagram. Instagram is your only place to find all of your app-registered needs, including photos, videos and more! Visit www.instagram.com today or check your local provider for details before it's too late!</marquee>
+<marquee direction="down" width="250" height="200" behavior="alternate" style="border:solid">
+  <marquee behavior="alternate">
+      <img src="https://nicoleevelina.files.wordpress.com/2015/01/instagram-icon.png">
+  </marquee>
+</center>
 <script src="js/main.js"></script>
 </body>
 </html>
