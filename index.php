@@ -102,6 +102,7 @@ else {
 <!doctype html>
 <html>
 <head>
+    <?php require_once("loading.php");?>
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
