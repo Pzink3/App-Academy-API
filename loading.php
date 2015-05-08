@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
 </head>
 <body>
    
-   <div id="load_screen" style='font-color:white'><div id="loading"><center><img src='https://www.greenedu.com/img/loading-small.gif'></center>Loading...</div></font></div>
+   <div id="load_screen" style='font-color:white'><div id="loading"><center><img src='https://www.greenedu.com/img/loading-small.gif'></center><center>Loading...</div></font></div>
 <?php include_once("index.php");?>
 </body>
 </html>
