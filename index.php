@@ -18,6 +18,9 @@
 body{
     font-family: 'Eight Track';
     src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
+    background-image: url("http://stitchmasterfresno.com/wp-content/uploads/2013/10/instagram.png");
+    background-color: #cccccc;
+   
 }
 a { text-decoration: none; }
 a:visited { text-decoration: none; }
