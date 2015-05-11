@@ -17,7 +17,7 @@
 }
 body{
     font-family: 'Eight Track';
-  src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
+    src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
 }
 a { text-decoration: none; }
 a:visited { text-decoration: none; }
