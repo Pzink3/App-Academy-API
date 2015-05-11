@@ -3,6 +3,11 @@
 <head>
 
 <style>
+    @font-face {
+  font-family: 'Eight Track';
+  src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
+}
+
 div#load_screen{
 	background: #000;
 	opacity: 1;
@@ -17,6 +22,8 @@ div#load_screen > div#loading{
 	width:120px;
 	height:24px;
 	margin: 300px auto;
+        font-family: 'Eight Track';
+  src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
 }
 </style>
 <script>

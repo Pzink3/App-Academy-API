@@ -3,7 +3,18 @@
   font-family: 'Eight Track';
   src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
 }
-
+.clockStyle {
+	background-color:#000;
+	border:#999 2px inset;
+	padding:6px;
+	color:#0FF;
+	font-family: 'Eight Track';
+        src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
+    font-size:16px;
+    font-weight:bold;
+	letter-spacing: 2px;
+	display:inline;
+}
 body{
     font-family: 'Eight Track';
   src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
@@ -16,6 +27,7 @@ a:hover, a:active { text-decoration: none; }
 a { color:blue }
 </style>
 <?php
+
 //Configuration for our PHP server
 set_time_limit(0);
 ini_set('default_socket_timeout', 300);
@@ -111,7 +123,39 @@ else {
 <link rel="author" href="humans.txt">
 </head>
 <body>
+    <div id="clockDisplay" class="clockStyle"></div>
+<script>
+function renderTime() {
+	var currentTime = new Date();
+	var diem = "AM";
+	var h = currentTime.getHours();
+	var m = currentTime.getMinutes();
+    var s = currentTime.getSeconds();
+	setTimeout('renderTime()',1000);
+    if (h == 0) {
+		h = 12;
+	} else if (h > 12) { 
+		h = h - 12;
+		diem="PM";
+	}
+	if (h < 10) {
+		h = "0" + h;
+	}
+	if (m < 10) {
+		m = "0" + m;
+	}
+	if (s < 10) {
+		s = "0" + s;
+	}
+    var myClock = document.getElementById('clockDisplay');
+	myClock.textContent = h + ":" + m + ":" + s + " " + diem;
+	myClock.innerText = h + ":" + m + ":" + s + " " + diem;
+}
+renderTime();
+</script>
+
 <center>
+    
 <!-- Creating a login for people to go and give approval for our web app to access their Instagram Account after getting approval we are now -->
 <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">Login</a></font>
 <br>
