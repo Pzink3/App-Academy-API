@@ -16,6 +16,8 @@ div#load_screen{
 	top: 0px;
 	width: 100%;
 	height: 1600px;
+         font-family: 'Eight Track';
+  src: url('http://www.fontsaddict.com/fontface/eight-track.TTF');
 }
 div#load_screen > div#loading{
 	color:#FFF;
