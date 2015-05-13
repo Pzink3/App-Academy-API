@@ -36,8 +36,8 @@ set_time_limit(0);
 ini_set('default_socket_timeout', 300);
 session_start();
 //Make Constants using define.
-define('clientID', '5df99c56108741c9be563c983863ff1b');
-define('clientSecret', '57591702df9b45c69b54cc2a0e83c87a');
+define('clientID', '4e6800479159456795b55ad092b60633');
+define('clientSecret', '02df84a6dd5145b2805717ec1ec732b8');
 define('websiteURL', 'http://localhost/appacademyapi/index.php');
 define('redirectURI', 'http://localhost/appacademyapi/index.php');
 define('ImageDirectory', 'pics/');
