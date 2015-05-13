@@ -38,7 +38,6 @@ session_start();
 //Make Constants using define.
 define('clientID', '4e6800479159456795b55ad092b60633');
 define('clientSecret', '02df84a6dd5145b2805717ec1ec732b8');
-define('websiteURL', 'http://localhost/appacademyapi/index.php');
 define('redirectURI', 'http://localhost/appacademyapi/index.php');
 define('ImageDirectory', 'pics/');
 
@@ -60,7 +59,7 @@ function getUserID($userName){
     $url = "http://api.instagram.com/vl/users/search?q=".$userName."&client_id=".clientID;
     $instagramInfo = connectToInstagram($url);
     $results = json_decode($instagramInfo, true);
-    return $results['data']['0']['id'];
+    return $results['data']['0']['id'];//echoing out userID
 }
 //function to print out images onto screen
 
@@ -72,7 +71,7 @@ function printImages($userID){
     foreach($results['data'] as $items){
     $image_url = $items['images']['low_resolution']['url'];
         
-    echo "<img src=".$image_url."/><br/>";
+    echo '<img src=" ' .$image_url . ' "/><br/>';
     //function to save image to server
     
     function savePictures($image_url){
