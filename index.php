@@ -73,9 +73,9 @@ function printImages($userID){
         
     echo '<img src=" ' .$image_url . ' "/><br/>';
     //function to save image to server
-    
+    savePictures($image_url);
     function savePictures($image_url){
-        echo $image_url."<br>";
+        echo $image_url . "<br>";
         $filename = basename($image_url);
         echo $filename . "<br>";
         
@@ -91,7 +91,7 @@ if(isset($_GET['code'])){
     $access_token_settings = array('client_id' => clientID,
                                     'client_secret' => clientSecret,
                                     'grant_type' => 'authorization_code',
-                                    'redirect_uri' == redirectURI,
+                                    'redirect_uri' => redirectURI,
                                     'code' => $code
                                      );
     
