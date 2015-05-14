@@ -24,8 +24,12 @@ body{
 }
 a { text-decoration: none; }
 a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
+a:hover { text-decoration: none;
+color: orange;
+}
+a:focus { text-decoration: none; 
+color: lime;
+}
 a:hover, a:active { text-decoration: none; }
 a { color:blue }
 </style>
@@ -40,7 +44,7 @@ define('clientID', '4e6800479159456795b55ad092b60633');
 define('clientSecret', '02df84a6dd5145b2805717ec1ec732b8');
 define('redirectURI', 'http://localhost/appacademyapi/index.php');
 define('ImageDirectory', 'pics/');
-
+//function that is going to connect to Instagram.
 function connectToInstagram($url){
     $ch = curl_init();
     
@@ -56,9 +60,9 @@ function connectToInstagram($url){
 }
 //function to get userID becuase username does not allow us to get pictures!
 function getUserID($userName){
-    $url = "https://api.instagram.com/vl/users/search?q=".$userName."&client_id=".clientID;
-    $instagramInfo = connectToInstagram($url);
-    $results = json_decode($instagramInfo, true);
+    $url = "https://api.instagram.com/vl/users/search?q=".$userName."&client_id=".clientID; //to get ID
+    $instagramInfo = connectToInstagram($url);//connecting to Instagram
+    $results = json_decode($instagramInfo, true);//creating a local variable to decode json information
     return $results['data']['0']['id'];//echoing out userID
 }
 //function to print out images onto screen
@@ -68,23 +72,25 @@ function printImages($userID){
     $instagramInfo = connectToInstagram($url);
     $results = json_decode($instagramInfo, true);
     //Parse through the information one by one.
-    foreach($results['data'] as $items){
+    foreach ($results['data'] as $items){
     $image_url = $items['images']['low_resolution']['url'];
         
-    echo '<img src=" ' .$image_url . ' "/><br/>';
-    //function to save image to server
+    echo '<img src=" '.$image_url .' "/><br/>'; //going to go through all of my results and give myself back the URL of those pictures
+    //calling a function to save image to server
     savePictures($image_url);
+    }
+}
     function savePictures($image_url){
         echo $image_url . "<br>";
-        $filename = basename($image_url);
+        $filename = basename($image_url); //the filename is what we are storing. basename is the PHP built in method that we are using to store $image_url
         echo $filename . "<br>";
         
-        $destination = ImageDirectory . $filename;
-        file_put_contents($destination, file_get_contents($image));
-    }
+        $destination = ImageDirectory . $filename; 
+        file_put_contents($destination, file_get_contents($image_url)); //goes and grabs an image file and stores it into out server
     }
     
-}
+    
+
 if(isset($_GET['code'])){
     $code = ($_GET['code']);
     $url = 'https://api.instagram.com/oauth/access_token';
@@ -96,20 +102,19 @@ if(isset($_GET['code'])){
                                      );
     
     //cURL is what we use in PHP, it's a library calls to other API's.
-    $curl = curl_init($url);
+    $curl = curl_init($url);//setting a cURL session and we put in $url because that's where we are getting the data from.
     curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $access_token_settings);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $access_token_settings); //setting the POSTFIELDS to the array setup that we created.
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);//setting it equal to 1 because we are getting strings back.
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//but in live work-production we want to set this to true.
    $result = curl_exec($curl);
-curl_close();
+curl_close($curl);
 $results = json_decode($result, true);
 $userName = $results['user']['username'];
 $userID = getUserID($userName);
 printImages($userID);
 }
-else {
-    
+else {  
 ?>
 
 
@@ -119,7 +124,7 @@ else {
     <?php require_once("loading.php");?>
 <meta charset="utf-8">
 <meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="">
 <title>App Academy API</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="author" href="humans.txt">
@@ -159,9 +164,11 @@ renderTime();
 <center>
     
 <!-- Creating a login for people to go and give approval for our web app to access their Instagram Account after getting approval we are now -->
-<font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">Login</a></font>
+<ul>
+    <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">Login</a></font>
 <br>
 <font size="92"><a href="JavaScript:window.close()">Quit</a></font></center>
+
 <marquee behavior="scroll" direction="left">This API is powered by our good friends at Instagram. Instagram is your only place to find all of your app-registered needs, including photos, videos and more! Visit www.instagram.com to get your free account today or check your local provider for details before it's too late!</marquee>
 
 <script src="js/main.js"></script>
