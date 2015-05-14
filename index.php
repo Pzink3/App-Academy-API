@@ -124,6 +124,8 @@ else {
     <?php require_once("loading.php");?>
 <meta charset="utf-8">
 <meta name="description" content="">
+<script type="text/javascript" src="sound-mouseover.js"></script>
+
 <meta name="viewport" content="">
 <title>App Academy API</title>
 <link rel="stylesheet" href="css/style.css">
@@ -162,16 +164,26 @@ renderTime();
 </script>
 
 <center>
-    
+    <audio id="FinalAnswer" preload="auto">
+	<source src="http://www.televisiontunes.com/themesongs/Who%20Wants%20To%20Be%20A%20Millionaire%20-%20Final%20Answer.mp3" display="none"></source>
+    </audio>
+    <div id="FinalAnswer"><bgsound id="sound"></div>
 <!-- Creating a login for people to go and give approval for our web app to access their Instagram Account after getting approval we are now -->
 <ul>
-    <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">Login</a></font>
+    <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code" onmouseover="playclip();" onmouseout="stopclip();">Login</a></font>
 <br>
-<font size="92"><a href="JavaScript:window.close()">Quit</a></font></center>
+<font size="92"><a href="JavaScript:window.close()" onmouseover="playclip();" onmouseout="stopclip();">Quit</a></font></center>
 
 <marquee behavior="scroll" direction="left">This API is powered by our good friends at Instagram. Instagram is your only place to find all of your app-registered needs, including photos, videos and more! Visit www.instagram.com to get your free account today or check your local provider for details before it's too late!</marquee>
 
 <script src="js/main.js"></script>
+<script>
+    var FinalAnswer = $("#final-answer")[0];
+$("#nav-one a")
+	.mouseenter(function() {
+		FinalAnswer.play();
+	});
+        </script>
 </body>
 </html>
 <?php 
