@@ -174,9 +174,9 @@ renderTime();
     <div id="FinalAnswer"><bgsound id="sound"></div>
 <!-- Creating a login for people to go and give approval for our web app to access their Instagram Account after getting approval we are now -->
 <ul>
-    <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code" onmouseover="playclip();" onclick="playclip()" onmouseout="stopclip();">Login</a></font>
+    <font size="92"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code" title="Final Answer?" onmouseover="playclip();" onclick="playclip()" onmouseout="stopclip();">Login</a></font>
 <br>
-<font size="92"><a href="JavaScript:window.close()" onmouseover="playclip();" onmouseout="stopclip();">Quit</a></font></center>
+<font size="92"><a href="JavaScript:window.close()" title="Final Answer?" onmouseover="playclip();" onmouseout="stopclip();">Quit</a></font></center>
 
 <marquee behavior="scroll" direction="left">This API is powered by our good friends at Instagram. Instagram is your only place to find all of your app-registered needs, including photos, videos and more! Visit www.instagram.com to get your free account today or check your local provider for details before it's too late!</marquee>
 
